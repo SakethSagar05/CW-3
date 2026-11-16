@@ -1,0 +1,45 @@
+// Firestore emulator (demo-cloud-quest) at 2026-11-15 21:38:01
+// challenges/today
+{
+  "name": "projects/demo-cloud-quest/databases/(default)/documents/challenges/today",
+  "fields": {
+    "title": {
+      "stringValue": "Spot the Trusted Writer"
+    },
+    "prompt": {
+      "stringValue": "Which part of Cloud Quest is allowed to write your points and badge? Explain in one sentence why the app on your phone is not allowed to do it itself, then tap Complete challenge."
+    }
+  },
+  "createTime": "2026-11-16T02:35:45.048796Z",
+  "updateTime": "2026-11-16T02:35:45.048796Z"
+}
+
+// every users/{uid}/progress/* document (empty list = none exist)
+[
+{
+  "document": {
+    "name": "projects/demo-cloud-quest/databases/(default)/documents/users/6mHpytA6uOwbOvSUGmPqIo7H0UYQ/progress/today",
+    "fields": {
+      "completed": {
+        "booleanValue": true
+      },
+      "points": {
+        "integerValue": "10"
+      },
+      "badgeId": {
+        "stringValue": "first-quest"
+      },
+      "completedAt": {
+        "timestampValue": "2026-11-16T02:37:17.644Z"
+      }
+    },
+    "createTime": "2026-11-16T02:37:17.648309Z",
+    "updateTime": "2026-11-16T02:37:17.648309Z"
+  },
+  "readTime": "2026-11-16T02:38:01.499192Z",
+  "done": true
+}
+]
+
+// Auth emulator accounts (uid, email)
+{"kind":"identitytoolkit#DownloadAccountResponse","users":[{"localId":"6mHpytA6uOwbOvSUGmPqIo7H0UYQ","lastLoginAt":"1794796565122","emailVerified":false,"email":"learner1@example.com","salt":"fakeSaltljnndXDWpilbYXXtTG4n","passwordHash":"fakeHash:salt=fakeSaltljnndXDWpilbYXXtTG4n:password=quest-pass-123","passwordUpdatedAt":1794796565122,"validSince":"1794796565","createdAt":"1794796565122","providerUserInfo":[{"providerId":"password","email":"learner1@example.com","federatedId":"learner1@example.com","rawId":"learner1@example.com"}],"lastRefreshAt":"2026-11-16T02:36:05.127Z"}]}

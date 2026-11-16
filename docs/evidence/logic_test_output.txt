@@ -1,0 +1,28 @@
+
+> test
+> node --test test/logic.test.js
+
+Quest Coach failed: Simulated tool failure.
+Quest Coach failed: Challenge document is missing.
+Quest Coach failed: Simulated model outage.
+✔ reward: signed-out caller is rejected and nothing is written (1.31725ms)
+✔ reward: unknown challenge is rejected (0.115792ms)
+✔ reward: first completion writes 10 points and the badge (0.7485ms)
+✔ reward: retry returns the saved reward and does not write again (0.185334ms)
+✔ reward: a double tap (two calls at once) still awards once (0.167667ms)
+✔ reward: client-supplied uid, points and badge are ignored (0.13575ms)
+✔ coach: signed-out caller and bad questions are rejected (1.46425ms)
+✔ coach: hint is grounded in the caller's challenge and progress (78.927458ms)
+✔ coach: adversarial request changes nothing and claims nothing (2.443625ms)
+✔ coach: a uid sent by the client is ignored; only the caller's data is read (2.441708ms)
+✔ coach: tool failure returns an error, not an invented hint (2.294167ms)
+✔ coach: model outage returns a clear error (0.701291ms)
+✔ coach: the failure switch does nothing outside the emulator (1.892792ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1030.557458

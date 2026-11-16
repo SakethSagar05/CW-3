@@ -1,0 +1,23 @@
+{
+  "name": "cloud-quest-functions",
+  "private": true,
+  "type": "module",
+  "main": "index.js",
+  "engines": {
+    "node": "22"
+  },
+  "scripts": {
+    "seed": "node seed.js",
+    "test": "node --test test/logic.test.js",
+    "test:emulator": "firebase emulators:exec --only auth,firestore,functions --project demo-cloud-quest \"node --test test/emulator.test.js\""
+  },
+  "dependencies": {
+    "@genkit-ai/google-genai": "^1.44.0",
+    "firebase-admin": "^14.5.1",
+    "firebase-functions": "^7.4.0",
+    "genkit": "^1.44.0"
+  },
+  "devDependencies": {
+    "firebase": "^13.0.0"
+  }
+}

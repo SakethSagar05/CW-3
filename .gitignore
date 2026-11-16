@@ -1,0 +1,46 @@
+# Flutter / Dart
+.dart_tool/
+.packages
+.pub-cache/
+.pub/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+*.iml
+.idea/
+.vscode/
+.metadata
+
+# Android
+android/.gradle/
+android/local.properties
+android/app/google-services.json
+android/key.properties
+*.jks
+*.keystore
+
+# iOS
+ios/Pods/
+ios/.symlinks/
+ios/Flutter/Flutter.framework
+ios/Runner/GoogleService-Info.plist
+
+# Firebase / Node
+functions/node_modules/
+*-debug.log
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+.firebase/
+
+# Secrets: never commit these
+*service-account*.json
+*serviceAccount*.json
+.env
+.env.*
+.secret.local
+
+.DS_Store
+
+__pycache__/
+docs/evidence/FAIL_*.png

@@ -1,0 +1,70 @@
+
+> test:emulator
+> firebase emulators:exec --only auth,firestore,functions --project demo-cloud-quest "node --test test/emulator.test.js"
+
+i  emulators: Starting emulators: auth, functions, firestore
+i  emulators: Detected demo project ID "demo-cloud-quest", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: downloading cloud-firestore-emulator-v1.22.0.jar...
+
+i  firestore: Firestore Emulator logging to firestore-debug.log
+✔  firestore: Firestore Emulator was started in standard edition.
+✔  firestore: Firestore Emulator UI websocket is running on 9150.
+i  functions: Watching "/Users/sakethsagar/MAD folder/cloud_quest/functions" for Cloud Functions...
+⚠  functions: Your requested "node" version "22" doesn't match your global version "24". Using node@24 from host.
+Serving at port 8237
+
+✔  functions: Loaded functions definitions from source: askQuestCoach, completeToday.
+✔  functions[us-central1-askQuestCoach]: http function initialized (http://127.0.0.1:5001/demo-cloud-quest/us-central1/askQuestCoach).
+✔  functions[us-central1-completeToday]: http function initialized (http://127.0.0.1:5001/demo-cloud-quest/us-central1/completeToday).
+i  Running script: node --test test/emulator.test.js
+(node:78645) MetadataLookupWarning: received unexpected error = All promises were rejected code = ETIMEDOUT, ENOTFOUND
+(Use `node --trace-warnings ...` to show where the warning was created)
+[2026-11-15T22:27:33.936Z]  @firebase/firestore: Firestore (13.3.0): GrpcConnection RPC 'Write' stream 0x190e1dde error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L15, false for 'update' @ L15
+✔ rules: a learner cannot write their own reward directly (4567.603ms)
+✔ rules: a learner cannot read another learner's progress (50.746708ms)
+[2026-11-15T22:27:34.053Z]  @firebase/firestore: Firestore (13.3.0): GrpcConnection RPC 'Write' stream 0x190e1de0 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L7, false for 'update' @ L7
+✔ rules: a learner cannot edit the shared challenge (33.022292ms)
+i  functions: Beginning execution of "us-central1-askQuestCoach"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "us-central1-askQuestCoach" in 1172.166083ms
+✔ coach: adversarial request leaves progress unchanged (3359.44425ms)
+i  functions: Beginning execution of "us-central1-completeToday"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "us-central1-completeToday" in 226.045167ms
+i  functions: Beginning execution of "us-central1-completeToday"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "us-central1-completeToday" in 23.692708ms
+✔ reward: first call awards 10 points and the badge; retry does not add more (1910.542459ms)
+i  functions: Beginning execution of "us-central1-askQuestCoach"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "us-central1-askQuestCoach" in 18.923125ms
+i  functions: Beginning execution of "us-central1-askQuestCoach"
+>  {"verifications":{"app":"MISSING","auth":"VALID"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "us-central1-askQuestCoach" in 21.029041ms
+✔ coach: each learner's hint reflects only their own progress (66.09025ms)
+i  functions: Beginning execution of "us-central1-completeToday"
+>  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "us-central1-completeToday" in 2.352042ms
+i  functions: Beginning execution of "us-central1-askQuestCoach"
+>  {"verifications":{"app":"MISSING","auth":"MISSING"},"logging.googleapis.com/labels":{"firebase-log-type":"callable-request-verification"},"severity":"DEBUG","message":"Callable request verification passed"}
+i  functions: Finished "us-central1-askQuestCoach" in 2.329084ms
+✔ signed-out callers are rejected by both callables (14.105417ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 10616.45275
+✔  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  functions: Stopping Functions Emulator
+i  firestore: Stopping Firestore Emulator
+i  auth: Stopping Authentication Emulator
+i  eventarc: Stopping Eventarc Emulator
+i  tasks: Stopping Cloud Tasks Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

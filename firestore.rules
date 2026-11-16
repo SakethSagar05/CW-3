@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // One shared challenge: any signed-in learner may read it, nobody may edit it.
+    match /challenges/{challengeId} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+    // Private progress: only the owner may read it. No client may write it;
+    // points and the badge are written only by the completeToday Function
+    // (Admin SDK), which bypasses these rules and does its own checks.
+    match /users/{userId}/progress/{progressId} {
+      allow read: if request.auth != null
+        && request.auth.uid == userId;
+      allow write: if false;
+    }
+    // Optional push extension is not built; keep device tokens closed.
+    match /users/{userId}/devices/{deviceId} {
+      allow read, write: if false;
+    }
+    // Anything not listed above is denied by default.
+  }
+}
